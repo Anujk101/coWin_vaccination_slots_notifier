@@ -23,7 +23,9 @@ app.get('/',(req,res)=>{
     res.send("Vaccinations Slots Searching")
 })
 setInterval(()=>{
-    searchForSlots()
+    searchForSlots().catch(err => {
+        console.log("Error at INDEX", err);
+    })
 },30000)
 
 
