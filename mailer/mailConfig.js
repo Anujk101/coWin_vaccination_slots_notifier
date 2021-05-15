@@ -3,13 +3,14 @@ const cred = require('../credential.json')['gmail_creds'];
 
 
 const transporter = nodemailer.createTransport({
-    host : 'smtp.gmail.com',
-    port: 587,
-    secure:true,
-    requireTLS:true,
+    service: "gmail",
     auth: {
+        type : "OAuth2",
         user: cred.GMAIL_USER_ID,
-        pass: cred.GMAIL_USER_PASSWORD
+        pass: cred.GMAIL_USER_PASSWORD,
+        clientId : cred.CLIENT_ID,
+        clientSecret : cred.CLIENT_SECRET,
+        refreshToken : cred.REFRESH_TOKEN
     }
 });
 
