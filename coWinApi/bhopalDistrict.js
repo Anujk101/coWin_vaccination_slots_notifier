@@ -14,12 +14,13 @@ const getBhopalDetails = async () => {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
         }
     })
+    console.log(response)
     const json = await response.json()
 
     let availabe = false
     const results = json.centers.map((center)=>{
+        console.log(center.sessions[0].min_age_limit)
         if(center.sessions[0].min_age_limit == 18 && center.sessions[0].available_capacity > 0) {
-            console.log(center.sessions[0].min_age_limit)
             availabe = true
         }
     })
