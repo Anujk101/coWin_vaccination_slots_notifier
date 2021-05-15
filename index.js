@@ -20,13 +20,14 @@ const searchForSlots = async()=>{
 }
 
 app.get('/',(req,res)=>{
+    setInterval(()=>{
+        searchForSlots().catch(err => {
+            console.log("Error at INDEX", err);
+        })
+    },30000)
     res.send("Vaccinations Slots Searching")
 })
-setInterval(()=>{
-    searchForSlots().catch(err => {
-        console.log("Error at INDEX", err);
-    })
-},30000)
+
 
 
 app.listen(PORT,()=> console.log(`app is listening on: ${PORT}`));
