@@ -24,7 +24,7 @@ app.get('/',(req,res)=>{
 })
 setInterval(()=>{
     searchForSlots().catch(err => {
-        console.log("Error at INDEX", errr);
+        console.log("Error at INDEX", err);
     })
 },30000)
 
