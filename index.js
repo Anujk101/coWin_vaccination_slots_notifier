@@ -26,7 +26,7 @@ setInterval(()=>{
     searchForSlots().catch(err => {
         console.log("Error at INDEX", err);
     })
-},30000)
+},300000)
 
 
 app.listen(PORT,()=> console.log(`app is listening on: ${PORT}`));

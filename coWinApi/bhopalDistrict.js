@@ -19,7 +19,6 @@ const getBhopalDetails = async () => {
 
     let availabe = false
     const results = json.centers.map((center)=>{
-        console.log(center.sessions[0].min_age_limit)
         if(center.sessions[0].min_age_limit == 18 && center.sessions[0].available_capacity > 0) {
             availabe = true
         }
